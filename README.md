@@ -31,7 +31,7 @@ Największy katalog stron medycznych w Polsce. Znajdź zaufane źródła informa
 
 1. **Sklonuj repozytorium**
    ```bash
-   git clone https://github.com/your-username/katalog-stron-medycznych.git
+   git clone https://github.com/gmaxsoft/katalog.git
    cd katalog-stron-medycznych
    ```
 
@@ -296,7 +296,7 @@ Ten projekt jest objęty licencją MIT - zobacz plik [LICENSE](LICENSE) dla szcz
 ## 📞 Kontakt
 
 - **Email**: kontakt@katalogmedyczny.pl
-- **GitHub**: [your-username](https://github.com/your-username)
+- **GitHub**: [gmaxsoft](https://github.com/gmaxsoft)
 
 ---
 
