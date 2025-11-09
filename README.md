@@ -295,7 +295,6 @@ Ten projekt jest objęty licencją MIT - zobacz plik [LICENSE](LICENSE) dla szcz
 
 ## 📞 Kontakt
 
-- **Email**: kontakt@katalogmedyczny.pl
 - **GitHub**: [gmaxsoft](https://github.com/gmaxsoft)
 
 ---
