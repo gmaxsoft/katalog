@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "home": "Strona Główna",
+    "categories": "Kategorie",
+    "addArticle": "Dodaj Artykuł",
+    "admin": "Panel Admin",
+    "adminCategories": "Zarządzanie Kategoriami",
+    "adminArticles": "Zarządzanie Artykułami"
+  },
+  "header": {
+    "title": "Katalog Stron Medycznych"
+  },
+  "footer": {
+    "title": "Katalog Stron Medycznych",
+    "description": "Największy katalog stron medycznych w Polsce. Znajdź zaufane źródła informacji zdrowotnej.",
+    "sections": {
+      "navigation": "Nawigacja",
+      "admin": "Dla Administratorów",
+      "contact": "Kontakt"
+    },
+    "contact": {
+      "email": "kontakt@katalogmedyczny.pl",
+      "phone": "+48 123 456 789",
+      "address": "Warszawa, Polska"
+    },
+    "copyright": "© 2024 Katalog Stron Medycznych. Wszelkie prawa zastrzeżone."
+  },
+  "sidebar": {
+    "categories": "Kategorie"
+  },
+  "home": {
+    "title": "Katalog Stron Medycznych",
+    "subtitle": "Znajdź zaufane źródła informacji zdrowotnej, kliniki, lekarzy i specjalistów w Polsce.",
+    "searchPlaceholder": "Szukaj lekarzy, klinik, aptek...",
+    "searchButton": "Szukaj",
+    "categoriesTitle": "Popularne Kategorie",
+    "categoriesSubtitle": "Znajdź najlepszych specjalistów w tej kategorii",
+    "seeMore": "Zobacz więcej →",
+    "stats": {
+      "doctors": "Zarejestrowanych Lekarzy",
+      "clinics": "Klinik i Szpitali",
+      "pharmacies": "Aptek i Punktów Medycznych"
+    }
+  },
+  "categories": {
+    "pageTitle": "Kategorie",
+    "subcategories": "Podkategorie",
+    "articles": "Artykuły w kategorii",
+    "noArticles": "Brak artykułów w tej kategorii.",
+    "seeMore": "Zobacz więcej →"
+  },
+  "articles": {
+    "by": "Przez",
+    "published": "Opublikowano",
+    "visitWebsite": "Odwiedź stronę",
+    "related": "Podobne Artykuły",
+    "backToCategory": "Powrót do kategorii"
+  },
+  "addArticle": {
+    "title": "Dodaj Artykuł do Katalogu",
+    "important": "Ważne:",
+    "importantText": "Dodanie artykułu do katalogu kosztuje 50.00 PLN. Płatność zostanie pobrana po wypełnieniu formularza.",
+    "sections": {
+      "basic": "Informacje Podstawowe",
+      "content": "Treść Artykułu",
+      "seo": "Ustawienia SEO"
+    },
+    "fields": {
+      "title": "Tytuł Artykułu",
+      "category": "Kategoria",
+      "excerpt": "Krótki Opis (Excerpt)",
+      "url": "URL Strony",
+      "seoTitle": "Tytuł SEO",
+      "seoDescription": "Opis SEO",
+      "seoKeywords": "Słowa Kluczowe SEO"
+    },
+    "placeholders": {
+      "title": "Np. Najlepszy Lekarz Rodzinny w Warszawie",
+      "excerpt": "Krótki opis artykułu wyświetlany w wynikach wyszukiwania",
+      "url": "https://przykladowa-strona.pl",
+      "seoTitle": "Tytuł wyświetlany w wynikach wyszukiwania",
+      "seoDescription": "Opis wyświetlany w wynikach wyszukiwania",
+      "seoKeywords": "słowo1, słowo2, słowo3"
+    },
+    "seo": {
+      "requirements": "Wymagania SEO:",
+      "requirementsText": "Treść artykułu musi mieć co najmniej 1000 znaków (obecnie: {count} znaków) aby zapewnić dobrą widoczność w wyszukiwarkach."
+    },
+    "payment": {
+      "title": "Płatność za Dodanie Artykułu",
+      "summary": "Podsumowanie",
+      "description": "Wybierz metodę płatności. Po dokonaniu płatności artykuł zostanie automatycznie dodany do katalogu.",
+      "paypal": "Zapłać z PayPal (50.00 PLN)",
+      "tpay": "Zapłać z TPay (50.00 PLN)",
+      "processing": "Przetwarzanie...",
+      "back": "Wróć do formularza",
+      "note": "Po kliknięciu przycisku zostaniesz przekierowany do płatności."
+    },
+    "buttons": {
+      "next": "Przejdź do Płatności (50.00 PLN)",
+      "submit": "Przetwarzanie...",
+      "back": "Wróć do formularza"
+    }
+  },
+  "errors": {
+    "notFound": "Nie znaleziono",
+    "articleNotFound": "Artykuł nie znaleziony",
+    "categoryNotFound": "Kategoria nie znaleziona",
+    "articleNotFoundText": "Przepraszamy, ale szukany artykuł nie istnieje.",
+    "categoryNotFoundText": "Przepraszamy, ale szukana kategoria nie istnieje.",
+    "required": "Proszę wypełnić wszystkie wymagane pola.",
+    "contentTooShort": "Treść artykułu musi mieć co najmniej 1000 znaków dla optymalizacji SEO.",
+    "articleExists": "Artykuł z tym URL już istnieje.",
+    "categoryNotExists": "Wybrana kategoria nie istnieje.",
+    "paymentError": "Wystąpił błąd podczas przetwarzania płatności.",
+    "generalError": "Wystąpił błąd podczas dodawania artykułu."
+  },
+  "success": {
+    "articleAdded": "Artykuł został dodany pomyślnie!",
+    "paymentCompleted": "Płatność zrealizowana przez {method}."
+  },
+  "common": {
+    "loading": "Ładowanie...",
+    "cancel": "Anuluj",
+    "confirm": "Potwierdź",
+    "yes": "Tak",
+    "no": "Nie",
+    "close": "Zamknij",
+    "save": "Zapisz",
+    "delete": "Usuń",
+    "edit": "Edytuj",
+    "view": "Zobacz",
+    "back": "Powrót"
+  }
+}
