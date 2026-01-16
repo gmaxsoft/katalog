@@ -1,197 +1,256 @@
-# Katalog Stron Medycznych
+# Medical Websites Catalog
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.0.1-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0-38B2AC)](https://tailwindcss.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC)](https://tailwindcss.com/)
 [![Prisma](https://img.shields.io/badge/Prisma-6.19-2D3748)](https://prisma.io/)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1)](https://mysql.com/)
 
-Największy katalog stron medycznych w Polsce. Znajdź zaufane źródła informacji zdrowotnej, kliniki, lekarzy i specjalistów.
+The largest medical websites catalog in Poland. Find trusted sources of health information, clinics, doctors, and specialists.
 
-## ✨ Funkcjonalności
+## ✨ Features
 
-- 🏥 **Katalog medyczny** - zorganizowane kategorie usług medycznych
-- 📝 **Artykuły SEO** - wysokiej jakości treści zoptymalizowane pod wyszukiwarki
-- 💳 **Płatne dodawanie** - bezpieczna płatność PayPal i TPay za dodanie artykułów
-- 🌐 **Wielojęzyczność** - system tłumaczeń z centralnym plikiem językowym
-- 🔐 **API CRUD** - REST API z uwierzytelnianiem dla zarządzania treścią
-- 📱 **Responsive Design** - optymalne wyświetlanie na wszystkich urządzeniach
-- 🔍 **SEO Optimized** - meta tagi, Schema.org, Open Graph
-- 🌳 **Drzewo kategorii** - intuicyjna nawigacja po specjalizacjach
+- 🏥 **Medical catalog** - organized categories of medical services
+- 📝 **SEO articles** - high-quality content optimized for search engines
+- 💳 **Paid submissions** - secure PayPal and TPay payment for article submissions
+- 🌐 **Multilingual** - translation system with centralized language file
+- 🔐 **CRUD API** - REST API with authentication for content management
+- 📱 **Responsive Design** - optimal display on all devices
+- 🔍 **SEO Optimized** - meta tags, Schema.org, Open Graph
+- 🌳 **Category tree** - intuitive navigation through specializations
 
-## 🚀 Szybki start
+## 🛠️ Technologies Used
 
-### Wymagania wstępne
+### Frontend
+- **Next.js 16.0.1** - React framework with App Router for server-side rendering and static site generation
+- **React 19.2.0** - UI library for building interactive user interfaces
+- **TypeScript 5** - Typed superset of JavaScript for better code quality and developer experience
+- **Tailwind CSS 4** - Utility-first CSS framework for rapid UI development
+
+### Backend & Database
+- **Prisma 6.19.0** - Next-generation ORM for type-safe database access and migrations
+- **MySQL 8.0** - Relational database management system (via mysql2 driver)
+- **NextAuth 4.24.13** - Complete authentication solution for Next.js applications
+
+### Payment Integration
+- **PayPal** - International payment gateway (paypal-checkout SDK)
+- **TPay** - Polish payment gateway supporting BLIK, bank transfers, and cards (tpay-webhook-auth)
+
+### Security & Utilities
+- **bcryptjs 3.0.3** - Password hashing library for secure user authentication
+- **dotenv** - Environment variable management
+- **ESLint** - Code linting and quality assurance
+
+### Development Tools
+- **tsx** - TypeScript execution engine for running scripts
+- **TypeScript** - Type checking and compilation
+
+## 🚀 Quick Start
+
+### Prerequisites
 
 - Node.js 18+
 - MySQL 8.0+
-- npm lub yarn
+- npm or yarn
 
-### Instalacja
+### Installation
 
-1. **Sklonuj repozytorium**
+1. **Clone the repository**
    ```bash
    git clone https://github.com/gmaxsoft/katalog.git
    cd katalog-stron-medycznych
    ```
 
-2. **Zainstaluj zależności**
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-3. **Skonfiguruj bazę danych**
-   - Upewnij się, że MySQL jest uruchomiony
-   - Utwórz bazę danych: `med_catalog`
-   - Zaktualizuj zmienne środowiskowe w pliku `.env`
+3. **Configure the database**
+   - Make sure MySQL is running
+   - Create database: `med_catalog`
+   - Copy `.env.example` to `.env`:
+     ```bash
+     cp .env.example .env
+     ```
+   - Update environment variables in `.env` file with your actual values
 
-4. **Skonfiguruj Prisma**
+4. **Configure Prisma**
    ```bash
    npx prisma generate
    npx prisma db push
    ```
 
-5. **Uruchom serwer deweloperski**
+5. **Run the development server**
    ```bash
    npm run dev
    ```
 
-6. **Otwórz aplikację**
-   - Przejdź do [http://localhost:3000](http://localhost:3000)
+6. **Open the application**
+   - Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 🛠️ Konfiguracja
+## 🛠️ Configuration
 
-### Zmienne środowiskowe (.env)
+### Environment Variables (.env)
 
-```env
-# Baza danych
-DATABASE_URL="mysql://root:@localhost:3306/med_catalog"
+1. **Copy the example file**:
+   ```bash
+   cp .env.example .env
+   ```
 
-# NextAuth (dla uwierzytelniania)
-NEXTAUTH_SECRET="your-secret-key-here"
-NEXTAUTH_URL="http://localhost:3000"
+2. **Update the `.env` file** with your actual values. See `.env.example` for all available variables:
 
-# PayPal (produkcyjnie należy użyć prawdziwych danych)
-PAYPAL_CLIENT_ID="your-paypal-client-id"
-PAYPAL_CLIENT_SECRET="your-paypal-client-secret"
-PAYPAL_ENVIRONMENT="sandbox"
-```
+   ```env
+   # Database
+   DATABASE_URL="mysql://root:@localhost:3306/med_catalog"
 
-### Uwierzytelnianie API
+   # NextAuth (for authentication)
+   NEXTAUTH_SECRET="your-secret-key-here"
+   NEXTAUTH_URL="http://localhost:3000"
 
-API używa podstawowego uwierzytelniania HTTP:
-- **Użytkownik**: `admin`
-- **Hasło**: `admin123`
+   # API Authentication (for REST API endpoints)
+   ADMIN_USERNAME="admin"
+   ADMIN_PASSWORD="your-secure-password-here"
 
-Przykład użycia:
+   # PayPal (use real credentials in production)
+   PAYPAL_CLIENT_ID="your-paypal-client-id"
+   PAYPAL_CLIENT_SECRET="your-paypal-client-secret"
+   PAYPAL_ENVIRONMENT="sandbox"
+
+   # TPay (Polish payments)
+   TPAY_API_KEY="your-tpay-api-key"
+   TPAY_API_PASSWORD="your-tpay-api-password"
+   TPAY_MERCHANT_ID="your-tpay-merchant-id"
+   TPAY_ENVIRONMENT="sandbox"
+   ```
+
+**⚠️ Security Note**: 
+- Never commit `.env` file to version control
+- `.env.example` is a template file and is safe to commit
+- Always use strong passwords in production
+- Generate a secure `NEXTAUTH_SECRET` using: `openssl rand -base64 32`
+
+### API Authentication
+
+The API uses HTTP Basic Authentication. Credentials are configured via environment variables:
+- **Username**: Set via `ADMIN_USERNAME` (defaults to `admin`)
+- **Password**: Set via `ADMIN_PASSWORD` (required)
+
+**⚠️ Security Note**: Never commit credentials to version control. Always use environment variables.
+
+Example usage:
 ```bash
-curl -u admin:admin123 http://localhost:3000/api/articles
+# Set credentials in your .env file first
+curl -u admin:your-secure-password http://localhost:3000/api/articles
 ```
 
-## 📁 Struktura projektu
+## 📁 Project Structure
 
 ```
 src/
 ├── app/                    # Next.js App Router
 │   ├── api/               # API endpoints
-│   │   ├── articles/      # Zarządzanie artykułami
-│   │   └── categories/    # Zarządzanie kategoriami
-│   ├── artykuly/          # Strony pojedynczych artykułów
-│   ├── kategorie/         # Strony kategorii
-│   ├── dodaj-artykul/     # Formularz dodawania artykułu
-│   ├── layout.tsx         # Główny layout aplikacji
-│   └── page.tsx           # Strona główna
-├── components/            # Komponenty React
-│   ├── Header.tsx         # Nagłówek strony
-│   ├── Footer.tsx         # Stopka strony
-│   ├── Layout.tsx         # Główny layout wrapper
-│   └── CategoryTree.tsx   # Drzewo kategorii
-└── lib/                   # Biblioteki pomocnicze
-    ├── prisma.ts          # Klient Prisma
-    ├── paypal.ts          # Integracja PayPal
-    ├── tpay.ts            # Integracja TPay
-    └── translations/      # System tłumaczeń
-        ├── index.ts       # Funkcje pomocnicze tłumaczeń
-        └── pl.json        # Plik tłumaczeń polski
+│   │   ├── articles/      # Article management
+│   │   └── categories/    # Category management
+│   ├── artykuly/          # Individual article pages
+│   ├── kategorie/         # Category pages
+│   ├── dodaj-artykul/     # Article submission form
+│   ├── layout.tsx         # Main application layout
+│   └── page.tsx           # Home page
+├── components/            # React components
+│   ├── Header.tsx         # Page header
+│   ├── Footer.tsx         # Page footer
+│   ├── Layout.tsx         # Main layout wrapper
+│   └── CategoryTree.tsx   # Category tree
+└── lib/                   # Helper libraries
+    ├── prisma.ts          # Prisma client
+    ├── paypal.ts          # PayPal integration
+    ├── tpay.ts            # TPay integration
+    └── translations/      # Translation system
+        ├── index.ts       # Translation helper functions
+        └── pl.json        # Polish translation file
 ```
 
-## 🔧 Dostępne skrypty
+## 🔧 Available Scripts
 
 ```bash
-# Uruchomienie serwera deweloperskiego
+# Run development server
 npm run dev
 
-# Budowanie aplikacji produkcyjnej
+# Build production application
 npm run build
 
-# Uruchomienie aplikacji produkcyjnej
+# Run production application
 npm start
 
-# Uruchomienie testów (jeśli dodane)
+# Run tests (if added)
 npm test
 
-# Formatowanie kodu
+# Code formatting
 npm run lint
+
+# Seed database
+npm run prisma:seed
 ```
 
-## 📊 Baza danych
+## 📊 Database
 
-### Schemat
+### Schema
 
-- **users** - użytkownicy systemu
-- **categories** - kategorie usług medycznych (hierarchiczne)
-- **articles** - artykuły z treścią SEO
-- **payments** - historia płatności PayPal
+- **users** - system users
+- **categories** - medical service categories (hierarchical)
+- **articles** - SEO content articles
+- **payments** - PayPal payment history
 
-### Migracje
+### Migrations
 
 ```bash
-# Generowanie migracji
+# Generate migrations
 npx prisma migrate dev
 
-# Aktualizacja schematu bazy danych
+# Update database schema
 npx prisma db push
 
-# Generowanie klienta Prisma
+# Generate Prisma client
 npx prisma generate
 ```
 
 ## 🌐 API Endpoints
 
-### Artykuły
-- `GET /api/articles` - lista artykułów
-- `POST /api/articles` - dodanie nowego artykułu
+### Articles
+- `GET /api/articles` - list articles
+- `POST /api/articles` - add new article
 
-### Kategorie
-- `GET /api/categories` - lista kategorii
-- `POST /api/categories` - dodanie nowej kategorii
+### Categories
+- `GET /api/categories` - list categories
+- `POST /api/categories` - add new category
 
-### Parametry zapytania
-- `?categoryId=1` - filtrowanie po kategorii
-- `?published=true` - tylko opublikowane artykuły
+### Query Parameters
+- `?categoryId=1` - filter by category
+- `?published=true` - only published articles
 
-## 💰 Płatności
+## 💰 Payments
 
-Projekt obsługuje dwie metody płatności: PayPal (międzynarodowe) oraz TPay (polskie płatności).
+The project supports two payment methods: PayPal (international) and TPay (Polish payments).
 
-**Koszt dodania artykułu**: 50.00 PLN
+**Article submission cost**: 50.00 PLN
 
 ### PayPal
 
-1. Załóż konto na [PayPal Developer](https://developer.paypal.com/)
-2. Utwórz aplikację i uzyskaj Client ID oraz Secret
-3. Zaktualizuj zmienne środowiskowe
-4. Dla testów użyj środowiska `sandbox`
+1. Create an account on [PayPal Developer](https://developer.paypal.com/)
+2. Create an application and obtain Client ID and Secret
+3. Update environment variables
+4. Use `sandbox` environment for testing
 
-### TPay (Polskie płatności)
+### TPay (Polish Payments)
 
-TPay to popularna polska bramka płatności obsługująca BLIK, przelewy bankowe, karty płatnicze i inne metody.
+TPay is a popular Polish payment gateway supporting BLIK, bank transfers, payment cards, and other methods.
 
-#### Konfiguracja TPay
+#### TPay Configuration
 
-1. Załóż konto na [TPay](https://tpay.com/)
-2. Uzyskaj API Key, API Password oraz Merchant ID
-3. Zaktualizuj zmienne środowiskowe:
+1. Create an account on [TPay](https://tpay.com/)
+2. Obtain API Key, API Password, and Merchant ID
+3. Update environment variables:
    ```env
    TPAY_API_KEY="your-tpay-api-key"
    TPAY_API_PASSWORD="your-tpay-api-password"
@@ -199,39 +258,39 @@ TPay to popularna polska bramka płatności obsługująca BLIK, przelewy bankowe
    TPAY_ENVIRONMENT="sandbox"
    ```
 
-#### Obsługiwane metody płatności (TPay)
+#### Supported Payment Methods (TPay)
 - BLIK
-- Przelew bankowy
-- Karta płatnicza
+- Bank transfer
+- Payment card
 - Google Pay / Apple Pay
-- PayPo (kup teraz, zapłać później)
+- PayPo (buy now, pay later)
 
-## 🌐 Internacjonalizacja (i18n)
+## 🌐 Internationalization (i18n)
 
-Projekt zawiera system tłumaczeń umożliwiający łatwą zmianę języka aplikacji.
+The project includes a translation system that allows easy language switching for the application.
 
-### Struktura tłumaczeń
+### Translation Structure
 
-Wszystkie teksty są przechowywane w pliku `src/lib/translations/pl.json`. Struktura obejmuje:
+All texts are stored in `src/lib/translations/pl.json`. The structure includes:
 
-- **nav** - elementy nawigacji
-- **header** - nagłówek strony
-- **footer** - stopka strony
-- **sidebar** - panel boczny
-- **home** - strona główna
-- **addArticle** - formularz dodawania artykułu
-- **errors** - komunikaty błędów
-- **success** - komunikaty sukcesu
-- **common** - wspólne elementy
+- **nav** - navigation elements
+- **header** - page header
+- **footer** - page footer
+- **sidebar** - side panel
+- **home** - home page
+- **addArticle** - article submission form
+- **errors** - error messages
+- **success** - success messages
+- **common** - common elements
 
-### Dodanie nowego języka
+### Adding a New Language
 
-1. Utwórz nowy plik `src/lib/translations/[lang].json`
-2. Skopiuj strukturę z `pl.json`
-3. Przetłumacz wszystkie wartości
-4. Zaktualizuj funkcję `getTranslation` w razie potrzeby
+1. Create a new file `src/lib/translations/[lang].json`
+2. Copy the structure from `pl.json`
+3. Translate all values
+4. Update the `getTranslation` function if needed
 
-### Użycie tłumaczeń w komponentach
+### Using Translations in Components
 
 ```typescript
 import { getTranslation } from '@/lib/translations'
@@ -240,63 +299,63 @@ const title = getTranslation('header.title')
 const errorMessage = getTranslationWithParams('errors.contentTooShort', { count: 1000 })
 ```
 
-## 🎨 Personalizacja
+## 🎨 Customization
 
-### Stylizacja
-Projekt używa Tailwind CSS. Główne klasy można znaleźć w:
-- `src/app/globals.css` - style globalne
-- Komponenty mają style inline z Tailwind
+### Styling
+The project uses Tailwind CSS. Main classes can be found in:
+- `src/app/globals.css` - global styles
+- Components have inline styles with Tailwind
 
 ### SEO
-- Automatyczne generowanie meta tagów dla każdej strony
-- Schema.org markup dla lepszej widoczności w wyszukiwarkach
-- Open Graph dla udostępniania w mediach społecznościowych
+- Automatic meta tag generation for each page
+- Schema.org markup for better search engine visibility
+- Open Graph for social media sharing
 
-## 🚢 Wdrożenie
+## 🚢 Deployment
 
-### Wdrożenie na Vercel
+### Deploy to Vercel
 
-1. **Połącz z GitHub**
+1. **Connect to GitHub**
    ```bash
-   # Vercel automatycznie wykryje Next.js
+   # Vercel will automatically detect Next.js
    vercel --prod
    ```
 
-2. **Skonfiguruj zmienne środowiskowe**
-   - Dodaj wszystkie zmienne z `.env` w panelu Vercel
+2. **Configure environment variables**
+   - Add all variables from `.env` in the Vercel dashboard
 
-3. **Skonfiguruj bazę danych**
-   - Użyj PlanetScale, Railway lub innego hosta MySQL
-   - Zaktualizuj `DATABASE_URL`
+3. **Configure database**
+   - Use PlanetScale, Railway, or another MySQL host
+   - Update `DATABASE_URL`
 
-### Wdrożenie na własnym serwerze
+### Deploy to Your Own Server
 
-1. **Zbuduj aplikację**
+1. **Build the application**
    ```bash
    npm run build
    ```
 
-2. **Uruchom serwer**
+2. **Run the server**
    ```bash
    npm start
    ```
 
-## 🤝 Przyczynianie się
+## 🤝 Contributing
 
-1. Forkuj projekt
-2. Utwórz branch dla nowych funkcjonalności (`git checkout -b feature/nowa-funkcja`)
-3. Zatwierdź zmiany (`git commit -am 'Dodaj nową funkcję'`)
-4. Wypchnij branch (`git push origin feature/nowa-funkcja`)
-5. Utwórz Pull Request
+1. Fork the project
+2. Create a branch for new features (`git checkout -b feature/new-feature`)
+3. Commit changes (`git commit -am 'Add new feature'`)
+4. Push the branch (`git push origin feature/new-feature`)
+5. Create a Pull Request
 
-## 📄 Licencja
+## 📄 License
 
-Ten projekt jest objęty licencją MIT - zobacz plik [LICENSE](LICENSE) dla szczegółów.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📞 Kontakt
+## 📞 Contact
 
 - **GitHub**: [gmaxsoft](https://github.com/gmaxsoft)
 
 ---
 
-⭐ Jeśli projekt okazał się przydatny, daj mu gwiazdkę na GitHub!
+⭐ If the project was helpful, give it a star on GitHub!

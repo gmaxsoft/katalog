@@ -23,6 +23,10 @@
 # misc
 .DS_Store
 *.pem
+*.log
+*.swp
+*.swo
+*~
 
 # debug
 npm-debug.log*
@@ -32,6 +36,20 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# secrets and credentials
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+credentials/
+*.secret
 
 # vercel
 .vercel
@@ -41,3 +59,13 @@ yarn-error.log*
 next-env.d.ts
 
 /src/generated/prisma
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+Thumbs.db
+.DS_Store

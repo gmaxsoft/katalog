@@ -13,8 +13,16 @@ function authenticate(request: NextRequest): boolean {
   const decoded = Buffer.from(credentials, 'base64').toString()
   const [username, password] = decoded.split(':')
 
-  // Simple authentication - in production, use proper user management
-  return username === 'admin' && password === 'admin123'
+  // Use environment variables for authentication
+  const adminUsername = process.env.ADMIN_USERNAME || 'admin'
+  const adminPassword = process.env.ADMIN_PASSWORD
+
+  if (!adminPassword) {
+    console.error('ADMIN_PASSWORD environment variable is not set')
+    return false
+  }
+
+  return username === adminUsername && password === adminPassword
 }
 
 export async function GET(request: NextRequest) {
